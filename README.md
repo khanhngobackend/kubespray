@@ -106,7 +106,7 @@ vagrant up
 - **Debian** Buster, Jessie, Stretch, Wheezy
 - **Ubuntu** 16.04, 18.04, 20.04
 - **CentOS/RHEL** 7, 8 (experimental: see [centos 8 notes](docs/centos8.md))
-- **Fedora** 31, 32
+- **Fedora** 32, 33
 - **Fedora CoreOS** (experimental: see [fcos Note](docs/fcos.md))
 - **openSUSE** Leap 42.3/Tumbleweed
 - **Oracle Linux** 7, 8 (experimental: [centos 8 notes](docs/centos8.md) apply)
@@ -116,7 +116,7 @@ Note: Upstart/SysV init based OS types are not supported.
 ## Supported Components
 
 - Core
-  - [kubernetes](https://github.com/kubernetes/kubernetes) v1.19.6
+  - [kubernetes](https://github.com/kubernetes/kubernetes) v1.20.2
   - [etcd](https://github.com/coreos/etcd) v3.4.13
   - [docker](https://www.docker.com/) v19.03 (see note)
   - [containerd](https://containerd.io/) v1.3.9
@@ -140,11 +140,11 @@ Note: Upstart/SysV init based OS types are not supported.
   - [coredns](https://github.com/coredns/coredns) v1.7.0
   - [ingress-nginx](https://github.com/kubernetes/ingress-nginx) v0.41.2
 
-Note: The list of validated [docker versions](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker) is 1.13.1, 17.03, 17.06, 17.09, 18.06, 18.09 and 19.03. The recommended docker version is 19.03. The kubelet might break on docker's non-standard version numbering (it no longer uses semantic versioning). To ensure auto-updates don't break your cluster look into e.g. yum versionlock plugin or apt pin).
+Note: The list of available docker version is 18.09, 19.03 and 20.10. The recommended docker version is 19.03. The kubelet might break on docker's non-standard version numbering (it no longer uses semantic versioning). To ensure auto-updates don't break your cluster look into e.g. yum versionlock plugin or apt pin).
 
 ## Requirements
 
-- **Minimum required version of Kubernetes is v1.17**
+- **Minimum required version of Kubernetes is v1.18**
 - **Ansible v2.9.x, Jinja 2.11+ and python-netaddr is installed on the machine that will run Ansible commands, Ansible 2.10.x is not supported for now**
 - The target servers must have **access to the Internet** in order to pull docker images. Otherwise, additional configuration is required (See [Offline Environment](docs/offline-environment.md))
 - The target servers are configured to allow **IPv4 forwarding**.

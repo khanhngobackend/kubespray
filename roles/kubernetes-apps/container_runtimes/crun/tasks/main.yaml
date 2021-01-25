@@ -1,8 +1,8 @@
 ---
 
 - name: crun | Copy runtime class manifest
-  copy:
-    src: runtimeclass-crun.yml
+  template:
+    src: ../files/runtimeclass-crun.yml
     dest: "{{ kube_config_dir }}/runtimeclass-crun.yml"
     mode: preserve
   when:
